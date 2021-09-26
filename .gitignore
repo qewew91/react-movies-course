@@ -94,5 +94,5 @@ typings/
 .env.test.local
 .env.production.local
 
-.idea
-.vscode
+/.idea
+/.vscode
