@@ -12,14 +12,17 @@ interface SearchProps {
 export const Search: FC<SearchProps> = ({ submitSearch, searchValue, onChangeSearchValue, searchFilter, changeFilter }) => {
   return (
       <div className="input-field">
-        <input type="search" placeholder="Enter movie/series/game name" value={searchValue}
-               onChange={onChangeSearchValue} />
+        <input 
+        type="search" 
+        placeholder="Enter movie/series name" 
+        value={searchValue}
+        onChange={onChangeSearchValue} 
+        />
         <button className="btn search-btn" type="submit" onClick={submitSearch}>Search</button>
         <label htmlFor="radio-all">
           <input
             type="radio"
             id="radio-all"
-            className="gap"
             data-type="all"
             name="type"
             onChange={changeFilter}
@@ -31,7 +34,6 @@ export const Search: FC<SearchProps> = ({ submitSearch, searchValue, onChangeSea
           <input
             type="radio"
             id="radio-movie"
-            className="gap"
             data-type="movie"
             onChange={changeFilter}
             name="type"
@@ -43,7 +45,6 @@ export const Search: FC<SearchProps> = ({ submitSearch, searchValue, onChangeSea
           <input
             id="radio-series"
             type="radio"
-            className="gap"
             data-type="series"
             onChange={changeFilter}
             name="type"

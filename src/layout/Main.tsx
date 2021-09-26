@@ -15,8 +15,8 @@ export const Main = () => {
   const [movies, setMovies] = useState<IMovie[]>([] as IMovie[])
   const { getRequest, loading } = useAxios<ISearch>()
 
-  const searchMovies = (s = 'matrix', params = {}, headers = {}) => {
-    getRequest(`http://omdbapi.com/?apikey=${API_KEY}&s=${s}`, params, headers)
+  const searchMovies = (search = 'matrix', params = {}, headers = {}) => {
+    getRequest(`http://omdbapi.com/?apikey=${API_KEY}&s=${search}`, params, headers)
       .then(response => setMovies(response.Search))
   }
 
@@ -31,6 +31,8 @@ export const Main = () => {
           type: searchFilter
         })
       }
+    } else {
+      searchMovies()
     }
   }
 
